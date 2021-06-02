@@ -34,6 +34,27 @@ public class Job {
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
+    // TODO: Create Test for toString
+    @Override
+    public String toString() {
+        String printEmployer = "Employer: _" + employer + "_ ";
+        String printID = "ID: _" + id + "_ ";
+
+        if (employer ==  null) {
+            return "Data not available";
+        } else if (location == null) {
+            return "Data not available";
+        } else if (positionType == null) {
+            return "Data not available";
+        } else if (coreCompetency == null) {
+            return "Data not available";
+        } else {
+            return "ID: _" + id + "_" + "/n Employer: _" + employer + "_" + "/n Location: _" + location + "_" + "/n Position Type: _" + positionType + "_" + "/n Core Competency: _" + coreCompetency + "_";
+        }
+    }
+
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
