@@ -28,4 +28,10 @@ public class testSettingJobId {
         Job second_identical_job = new Job("Opera Singer", new Employer("The Metropolitan Opera"), new Location("New York City"), new PositionType("Countertenor"), new CoreCompetency("Confidence"));
         Assert.assertNotEquals(first_identical_job.getId(), second_identical_job.getId());
     }
+
+    @Test
+    public final void testJobToString() {
+        Job job_to_string = new Job("Opera Singer", new Employer("The Metropolitan Opera"), new Location("New York City"), new PositionType("Countertenor"), new CoreCompetency("Confidence"));
+        Assert.assertEquals(job_to_string.getName(), "Opera Singer");
+    }
 }

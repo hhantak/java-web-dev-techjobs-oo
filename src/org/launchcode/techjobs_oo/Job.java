@@ -1,6 +1,9 @@
 package org.launchcode.techjobs_oo;
 //import java.util.Objects;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.util.Objects;
 
 public class Job {
@@ -33,27 +36,6 @@ public class Job {
     }
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
-
-    // TODO: Create Test for toString
-    @Override
-    public String toString() {
-        String printEmployer = "Employer: _" + employer + "_ ";
-        String printID = "ID: _" + id + "_ ";
-
-        if (employer ==  null) {
-            return "Data not available";
-        } else if (location == null) {
-            return "Data not available";
-        } else if (positionType == null) {
-            return "Data not available";
-        } else if (coreCompetency == null) {
-            return "Data not available";
-        } else {
-            return "ID: _" + id + "_" + "/n Employer: _" + employer + "_" + "/n Location: _" + location + "_" + "/n Position Type: _" + positionType + "_" + "/n Core Competency: _" + coreCompetency + "_";
-        }
-    }
-
-
 
     @Override
     public boolean equals(Object o) {
@@ -118,5 +100,28 @@ public class Job {
     //getter for id
     public int getId() {
         return id;
+    }
+
+    // TODO: Create Test for toString
+
+    @Override
+    public String toString() {
+        if (name == null) {
+            this.setName("Data Not Available");
+        } else if (employer == null) {
+            employer.setValue("Data Not Available");
+        } else if (location == null) {
+            location.setValue("Data Not Available");
+        } else if (positionType == null) {
+            positionType.setValue("Data Not Available");
+        } else if (coreCompetency == null) {
+            coreCompetency.setValue("Data Not Available");
+        }
+        return "ID: __" + id + "__" +
+                "\n Name: __" + name + "__" +
+                "\n Employer: __" + employer + "__" +
+                "\n Location: __" + location + "__" +
+                "\n Position Type: __" + positionType + "__" +
+                "\n Core Competency: __" + coreCompetency + "__";
     }
 }
