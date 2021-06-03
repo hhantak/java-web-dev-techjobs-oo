@@ -12,12 +12,22 @@ public abstract class JobField {
        nextId++;
    }
 
+    public JobField(String value) {
+        this();
+        this.value = value;
+    }
+
     @Override
     public boolean equals(Object o) {  // Two objects are equal if they have the same id.
         if (this == o) return true;
         if (!(o instanceof JobField)) return false;
         JobField jobField = (JobField) o;
         return getId() == jobField.getId();
+    }
+
+    @Override
+    public String toString() {
+        return value;
     }
 
     @Override

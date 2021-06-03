@@ -106,15 +106,15 @@ public class Job {
 
     @Override
     public String toString() {
-        if (name == null) {
+        if (name == "") {
             this.setName("Data Not Available");
-        } else if (employer == null) {
+        } else if (employer.getValue() == "") {
             employer.setValue("Data Not Available");
-        } else if (location == null) {
+        } else if (location.getValue() == "") {
             location.setValue("Data Not Available");
-        } else if (positionType == null) {
+        } else if (positionType.getValue() == "") {
             positionType.setValue("Data Not Available");
-        } else if (coreCompetency == null) {
+        } else if (coreCompetency.getValue() == "") {
             coreCompetency.setValue("Data Not Available");
         }
         return "ID: __" + id + "__" +

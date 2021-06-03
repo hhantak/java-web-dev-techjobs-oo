@@ -31,7 +31,9 @@ public class testSettingJobId {
 
     @Test
     public final void testJobToString() {
-        Job job_to_string = new Job("Opera Singer", new Employer("The Metropolitan Opera"), new Location("New York City"), new PositionType("Countertenor"), new CoreCompetency("Confidence"));
-        Assert.assertEquals(job_to_string.getName(), "Opera Singer");
+        Job job_to_string = new Job("Opera Singer", new Employer(""), new Location("New York City"), new PositionType("Countertenor"), new CoreCompetency("Confidence"));
+        Assert.assertEquals("__Opera Singer__", "__" + job_to_string.getName() + "__");
+        Assert.assertEquals(job_to_string.getEmployer().getValue(), "");
+        Assert.assertEquals("Opera Singer" + "\n" + "", job_to_string.getName() + "\n" + job_to_string.getEmployer().getValue());
     }
 }
